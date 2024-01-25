@@ -40,3 +40,44 @@ For Landmark-Ridge, landmark-based features are extracted using the RBF kernel. 
 ### Testing and Visualization
 Results for each case are plotted similarly to Kernel Ridge Regression. The RMSE for each case is reported, and observations from the plots are discussed. This also addresses the question of what value of L seems to be good enough.
 
+## K-Means Clustering with Feature Transformation
+### Overview
+This repository contains the implementation of the K-means clustering algorithm applied to a provided toy dataset (kmeans_data.txt) consisting of points in two dimensions. The dataset has two clusters (K = 2), but the standard K-means may not work well due to non-spherical and non-linearly separable clusters. Two approaches are considered to handle this issue:
+
+## 1. Hand-crafted Features
+### Data Exploration
+Before proposing a feature transformation, the original data is plotted in 2D using a scatter plot to identify potential transformations that might work.
+
+### Feature Transformation
+A feature transformation is proposed to make the clusters more amenable to K-means clustering. Apply the K-means algorithm to this transformed version of the data to verify if the transformation works.
+
+### Clustering Results Visualization
+Plot the obtained clustering results by showing points in cluster 1 in red and points in cluster 2 in green, all in the original 2D space.
+
+## 2. Landmark-Based Approach with Kernels
+### Landmark-Based Features
+Utilize the landmark-based approach to extract features. The RBF kernel (γ = 0.1) is employed for this purpose. For experimentation, L = 1 landmark point is randomly chosen from the dataset. Implement the standard K-means algorithm on these features.
+
+### Multiple Runs with Different Landmarks
+Perform 10 runs of the algorithm, each time with a different randomly chosen landmark point. Visualize the clustering results for each run, indicating the chosen landmark point in blue. Justify why correct clustering is achieved in some cases and not-so-correct clustering in other cases
+
+## Visualization of MNIST Digits Using PCA and t-SNE
+### Overview
+This repository contains code to visualize a subset of MNIST digits data using Principal Component Analysis (PCA) and t-distributed Stochastic Neighbor Embedding (t-SNE). The dataset comprises 10,000 examples from digits 0-9 (10 classes).
+
+### Dataset
+The dataset is provided as a pickle file, where the fields X and Y contain the digit input features (784 dimensional) and labels (0-9), respectively, for the 10,000 examples.
+
+### Visualization
+### PCA (Principal Component Analysis)
+Implement PCA to project the input features to two dimensions.
+Visualize the projected data in a scatter plot, coloring each point based on its class.
+
+### t-SNE (t-distributed Stochastic Neighbor Embedding)
+Implement t-SNE to project the input features to two dimensions.
+Visualize the projected data in a scatter plot, coloring each point based on its class.
+
+### Implementation
+The implementation includes Python code using existing library functions, such as those from scikit-learn, for PCA and t-SNE. The visualization plots are created for both methods, highlighting the different classes with distinct colors
+
+
